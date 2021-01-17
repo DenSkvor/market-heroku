@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <title>Редактирование продукта</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>Форма редактирования информации о товаре</h1>
+    <br>
+    <h3>Редактируемый товар</h3>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Название</td>
+            <td>Цена</td>
+            <td>Категория</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${updProduct.id}"/>
+            <td th:text="${updProduct.title}"/>
+            <td th:text="${updProduct.price}"/>
+            <td th:text="${updProduct.category.title}"/>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>Новые данные</h3>
+    <form method="post" th:action="@{'/products/upd/' + ${updProduct.id}}">
+        <div class="form-group col-md-6">
+            <label for="titleInput">Новое наименование товара</label>
+            <input class="form-control" th:value="${updProduct.title}" name="title" type="text" id="titleInput">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="priceInput">Новая цена</label>
+            <input class="form-control" th:value="${updProduct.price}" name="price" type="number" id="priceInput">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="categoryInput">Категория</label>
+            <br>
+            <select class="form-select form-select-lg mb-3" name="categoryID" type="text" id="categoryInput">
+                <option selected th:value="${updProduct.category.id}" th:text="${updProduct.category.title}"/>
+                <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.title}"/>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Изменить</button>
+    </form>
+    <br>
+    <a class="btn btn-primary" th:href="@{/products}">Назад</a>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Профиль</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Client)}" />
+    <h1>Профиль</h1>
+    <br>
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <td>Имя:</td>
+            <td th:text="${name}"/>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td th:text="${phoneNumber}"/>
+        </tr>
+        <tr>
+            <td>Почта:</td>
+            <td th:text="${email}"/>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary" th:href="@{/client/upd}">Редактировать</a>
+</div>
+</body>
+
+</html>

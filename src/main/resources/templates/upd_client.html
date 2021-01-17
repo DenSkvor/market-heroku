@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <title>Редактирование профиля</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>Форма редактирования профиля</h1>
+    <br>
+    <h3>Новые данные</h3>
+    <form method="post" th:action="@{/client/upd}">
+        <div class="form-group col-md-6">
+            <label for="nameInput">Имя</label>
+            <input class="form-control" th:value="${name}" name="newName" type="text" id="nameInput">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="phNumInput">Телефон</label>
+            <input class="form-control" th:value="${phoneNumber}" name="newPhNum" type="text" id="phNumInput">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="emailInput">Почта</label>
+            <input class="form-control" th:value="${email}" name="newEmail" type="text" id="emailInput">
+        </div>
+        <button class="btn btn-primary" type="submit">Применить</button>
+    </form>
+    <br>
+    <a class="btn btn-danger" th:href="@{/client}">Отмена</a>
+</div>
+</body>
+
+</html>
