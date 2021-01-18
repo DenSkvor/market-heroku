@@ -7,7 +7,7 @@ CREATE TABLE `category_tbl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
 
-INSERT INTO `market_db`.`category_tbl` (`category`) VALUES
+INSERT INTO `category_tbl` (`category`) VALUES
 ('Аудиотехника'),
 ('Клавиатуры'),
 ('Мышки'),
@@ -26,7 +26,7 @@ CREATE TABLE `product_tbl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
 
-INSERT INTO `market_db`.`product_tbl` (`title`, `price`, `category_id`) VALUES
+INSERT INTO `product_tbl` (`title`, `price`, `category_id`) VALUES
 ('Наушники', '3000', '1'),
 ('Клавиатура', '2100', '2'),
 ('Мышь', '1600', '3'),
@@ -61,7 +61,7 @@ CREATE TABLE `client_tbl` (
   PRIMARY KEY (`client_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
-INSERT INTO `market_db`.`client_tbl` (`client_name`, `password`, `phone_number`, `email`) VALUES
+INSERT INTO `client_tbl` (`client_name`, `password`, `phone_number`, `email`) VALUES
 ('admin', '$2b$04$DFBuN3HF36KAcAzgkPTJdOC5NPPetr58gVEvRc5sbNMGXQodeEkYa', '1234567', 'admin@email.ru'),
 ('user1', '$2b$04$DFBuN3HF36KAcAzgkPTJdOC5NPPetr58gVEvRc5sbNMGXQodeEkYa', '0987654', 'user1@email.ru'),
 ('user2', '$2b$04$DFBuN3HF36KAcAzgkPTJdOC5NPPetr58gVEvRc5sbNMGXQodeEkYa', '2346790', 'user2@email.ru')
@@ -75,7 +75,7 @@ CREATE TABLE `role_tbl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
 
-INSERT INTO `market_db`.`role_tbl` (`name`) VALUES
+INSERT INTO `role_tbl` (`name`) VALUES
 ('ROLE_ADMIN'),
 ('ROLE_USER'),
 ('ROLE_BLOCKED_USER')
@@ -94,7 +94,7 @@ CREATE TABLE `client_role_tbl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
 
-INSERT INTO `market_db`.`client_role_tbl` (`client_id`, `role_id`) VALUES
+INSERT INTO `client_role_tbl` (`client_id`, `role_id`) VALUES
 ('1', '1'),
 ('2', '2'),
 ('3', '3')
