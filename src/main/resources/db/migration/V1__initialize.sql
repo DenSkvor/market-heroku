@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `category_tbl`;
 CREATE TABLE `category_tbl` (
   `category_id`         int unsigned        NOT NULL    AUTO_INCREMENT,
   `category`            varchar(255)        NOT NULL,
@@ -14,6 +15,7 @@ INSERT INTO `category_tbl` (`category`) VALUES
 ('Разное')
 ;
 
+DROP TABLE IF EXISTS `product_tbl`;
 CREATE TABLE `product_tbl` (
   `product_id`          bigint unsigned     NOT NULL    AUTO_INCREMENT,
   `title`               varchar(255)        NOT NULL,
@@ -51,6 +53,7 @@ INSERT INTO `product_tbl` (`title`, `price`, `category_id`) VALUES
 ('Наушники5', '5000', '1')
 ;
 
+DROP TABLE IF EXISTS `client_tbl`;
 CREATE TABLE `client_tbl` (
   `client_id`           bigint unsigned         NOT NULL    AUTO_INCREMENT,
   `client_name`         varchar(255)            NOT NULL,
@@ -67,6 +70,7 @@ INSERT INTO `client_tbl` (`client_name`, `password`, `phone_number`, `email`) VA
 ('user2', '$2b$04$DFBuN3HF36KAcAzgkPTJdOC5NPPetr58gVEvRc5sbNMGXQodeEkYa', '2346790', 'user2@email.ru')
 ;
 
+DROP TABLE IF EXISTS `role_tbl`;
 CREATE TABLE `role_tbl` (
   `role_id`             int unsigned            NOT NULL    AUTO_INCREMENT,
   `name`                varchar(255)            NOT NULL,
@@ -81,6 +85,7 @@ INSERT INTO `role_tbl` (`name`) VALUES
 ('ROLE_BLOCKED_USER')
 ;
 
+DROP TABLE IF EXISTS `client_role_tbl`;
 CREATE TABLE `client_role_tbl` (
   `client_role_id`      bigint unsigned         NOT NULL    AUTO_INCREMENT,
   `client_id`           bigint unsigned         NOT NULL,
@@ -100,6 +105,7 @@ INSERT INTO `client_role_tbl` (`client_id`, `role_id`) VALUES
 ('3', '3')
 ;
 
+DROP TABLE IF EXISTS `order_tbl`;
 CREATE TABLE `order_tbl` (
   `order_id`            bigint unsigned         NOT NULL    AUTO_INCREMENT,
   `client_id`           bigint unsigned         NOT NULL,
@@ -113,6 +119,7 @@ CREATE TABLE `order_tbl` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 ;
 
+DROP TABLE IF EXISTS `order_item_tbl`;
 CREATE TABLE `order_item_tbl` (
   `order_item_id`       bigint unsigned         NOT NULL    AUTO_INCREMENT,
   `product_id`          bigint unsigned         NOT NULL,
