@@ -18,7 +18,7 @@ import java.security.Principal;
 import java.util.Map;
 
 @Controller
-@RequestMapping({"", "/","/products"})
+@RequestMapping({"","/","/products"})
 @AllArgsConstructor
 public class ProductController {
 
